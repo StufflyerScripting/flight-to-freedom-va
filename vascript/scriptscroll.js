@@ -70,6 +70,7 @@ const tagHandlers = {
     giggles: { type: 'standalone', label: '[giggles]', class: 'giggles' },
 
     // --- Modifier tags (affect next text) ---
+    normal: { type: 'modifier', class: 'normal' },
     whispering: { type: 'modifier', class: 'whisper' },
     excitedly: { type: 'modifier', class: 'excited' },
     angrily: { type: 'modifier', class: 'angry' },
