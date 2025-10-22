@@ -1,11 +1,13 @@
 const urlParams = new URLSearchParams(window.location.search);
+
 const speedPx = Number(urlParams.get('n')) || 3;     // n pixels per tick
-const tickMs  = Number(urlParams.get('t')) || 20;    // t milliseconds per tick
+const tickMs = Number(urlParams.get('t')) || 20;    // t milliseconds per tick
 
 const windowEl = document.getElementById('scriptWindow');
 const marqueeEl = document.getElementById('marquee');
 
 const params = new URLSearchParams(window.location.search);
+const subcategory = params.get('subcat') || ''; // fallback to empty if none
 const character = params.get('character') || 'hero';
 const language = params.get('lang') || 'en';
 
@@ -19,25 +21,42 @@ const scriptWindow = document.getElementById('scriptWindow');
 const resetBtn = document.getElementById('mobileReset');
 
 fetch('scripts.json')
-.then(r => r.json())
-.then(data => {
-    const line = (data[character] && data[character][language]) ? data[character][language] : null;
-    if (!line) {
-        marqueeEl.textContent = 'No script found for ' + character + ' (' + language + ').';
+    .then(r => r.json())
+    .then(data => {
+        let line = null;
+
+        if (data[character] && data[character][language]) {
+            if (subcategory && data[character][language][subcategory]) {
+                line = data[character][language][subcategory];
+            } else {
+                // fallback to first subcategory if none selected
+                const firstSubcat = Object.keys(data[character][language])[0];
+                line = data[character][language][firstSubcat];
+            }
+        }
+
+        if (!line) {
+            marqueeEl.textContent = 'No script found for ' + character + ' (' + language + ') [' + subcategory + '].';
+            centerMarqueeText();
+            return;
+        }
+
+        if (!line) {
+            marqueeEl.textContent = 'No script found for ' + character + ' (' + language + ').';
+            centerMarqueeText();
+            return;
+        }
+        renderScript(line);
+        // after rendering, position the marquee off the right edge
+        requestAnimationFrame(() => {
+            setupMarqueePosition();
+        });
+    })
+    .catch(err => {
+        console.error(err);
+        marqueeEl.textContent = 'Error loading scripts.json';
         centerMarqueeText();
-        return;
-    }
-    renderScript(line);
-    // after rendering, position the marquee off the right edge
-    requestAnimationFrame(() => {
-        setupMarqueePosition();
     });
-})
-.catch(err => {
-    console.error(err);
-    marqueeEl.textContent = 'Error loading scripts.json';
-    centerMarqueeText();
-});
 
 let modifierNext = false;
 
@@ -166,13 +185,13 @@ function stopScrolling() {
 }
 
 function setupMarquee() {
-  marqueeEl.style.transform = "translateY(-50%) translateX(0)";
-  const wRect = windowEl.getBoundingClientRect();
-  const mRect = marqueeEl.getBoundingClientRect();
-  marqueeWidth = mRect.width;
-  startX = wRect.width;
-  currentX = startX;
-  marqueeEl.style.transform = `translateY(-50%) translateX(${currentX}px)`;
+    marqueeEl.style.transform = "translateY(-50%) translateX(0)";
+    const wRect = windowEl.getBoundingClientRect();
+    const mRect = marqueeEl.getBoundingClientRect();
+    marqueeWidth = mRect.width;
+    startX = wRect.width;
+    currentX = startX;
+    marqueeEl.style.transform = `translateY(-50%) translateX(${currentX}px)`;
 }
 
 /* Toggle on Space (matches your previous behavior: space triggers scrolling but doesn't record) */
@@ -223,7 +242,7 @@ window.addEventListener('focus', () => {
 });
 
 window.addEventListener("resize", () => {
-  if (!running) setupMarquee();
+    if (!running) setupMarquee();
 });
 
 scriptWindow.addEventListener('click', () => {
