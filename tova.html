@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
     <link rel="shortcut icon" href="favicon.svg" type="image/x-icon">
     <title>Voice Acting - Selection</title>
 </head>
+
 <body>
     <h1>Select Character & Language</h1>
 
@@ -27,22 +29,81 @@
 
     <br><br>
 
+    <label for="subcategory">Subcategory:</label>
+    <select id="subcategory">
+        <option value="">--Select--</option>
+    </select>
+
+    <br><br>
+
     <button id="goBtn">Go</button>
     <p id="output"></p>
 
     <script>
-        document.getElementById('goBtn').addEventListener('click', () => {
-            const character = document.getElementById('character').value;
-            const language = document.getElementById('language').value;
-            const output = document.getElementById('output');
+        const characterSelect = document.getElementById('character');
+        const languageSelect = document.getElementById('language');
+        const subcategorySelect = document.getElementById('subcategory');
+        const goBtn = document.getElementById('goBtn');
+        const output = document.getElementById('output');
 
-            output.textContent = `Loading script for ${character} (${language})...`;
+        let scriptsData = {}; // store loaded JSON
 
-            // redirect with query params
-            // optional: also pass scroll speed (n,t)
-            window.location.href = `vascript/script.html?character=${character}&lang=${language}&n=3&t=20`;
-        });
+        // Load characters from JSON
+        fetch('vascript/scripts.json')
+            .then(res => res.json())
+            .then(data => {
+                scriptsData = data;
+
+                // Populate characters
+                characterSelect.innerHTML = '';
+                for (const charName in data) {
+                    const opt = document.createElement('option');
+                    opt.value = charName;
+                    opt.textContent = charName.charAt(0).toUpperCase() + charName.slice(1);
+                    characterSelect.appendChild(opt);
+                }
+
+                characterSelect.selectedIndex = 0;
+                updateSubcategories(); // populate subcategories for first character
+            })
+            .catch(err => {
+                console.error('Error loading scripts.json:', err);
+                output.textContent = 'Failed to load character list.';
+            });
+
+        // Populate subcategories based on character + language
+        function updateSubcategories() {
+            const char = characterSelect.value;
+            const lang = languageSelect.value;
+            subcategorySelect.innerHTML = '';
+
+            if (scriptsData[char] && scriptsData[char][lang]) {
+                for (const subcat in scriptsData[char][lang]) {
+                    const opt = document.createElement('option');
+                    opt.value = subcat;
+                    opt.textContent = subcat.charAt(0).toUpperCase() + subcat.slice(1);
+                    subcategorySelect.appendChild(opt);
+                }
+                subcategorySelect.selectedIndex = 0;
+            }
+        }
+
+        // Update subcategories when character or language changes
+        characterSelect.addEventListener('change', updateSubcategories);
+        languageSelect.addEventListener('change', updateSubcategories);
+
+        // Go button redirects to script page with selected character, language, subcategory
+        goBtn.addEventListener('click', () => {
+            const char = characterSelect.value;
+            const lang = languageSelect.value;
+            const subcat = subcategorySelect.value;
+            output.textContent = `Loading script for ${char} (${lang}) [${subcat}]...`;
+
+            window.location.href = `vascript/script.html?character=${char}&lang=${lang}&subcat=${subcat}&n=3&t=20`;
+        }); 
+
     </script>
-</body>
-</html>
 
+</body>
+
+</html>
