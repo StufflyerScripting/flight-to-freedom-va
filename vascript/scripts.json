@@ -1,14 +1,22 @@
 {
-    "hero": {
-        "en": "Oh no [pause] [breath] well I guess that’s [whispering] how it is [excitedly] but we did it!",
-        "de": "Oh nein [pause] [breath] Ich schätze, das ist [whispering] wie es ist"
+  "peter": {
+    "en": {
+      "greetings": "Hello [pause] [breath] nice to see you [excitedly]!",
+      "interjections": "Oh no [pause] [breath] that's [whispering] unfortunate!"
     },
-    "villain": {
-        "en": "[breath] Finally... [pause_long] you’ve arrived.",
-        "de": "[breath] Endlich... [pause_long] du bist angekommen."
-    },
-    "guide": {
-        "en": "Welcome [pause_short] traveler. [whispering] Be careful... [angrily] Something is watching you",
-        "de": "Willkommen [pause_short] Reisender. [whispering] Sei vorsichtig..."
+    "de": {
+      "greetings": "Hallo [pause] [breath] schön dich zu sehen [excitedly]!",
+      "interjections": "Oh nein [pause] [breath] das ist [whispering] unglücklich!"
     }
+  },
+  "günter": {
+    "en": {
+      "greetings": "Hi there [pause] [breath] welcome!",
+      "interjections": "Wow [pause_long] unbelievable!"
+    },
+    "de": {
+      "greetings": "Hi [pause] [breath] willkommen!",
+      "interjections": "Wow [pause_long] unglaublich!"
+    }
+  }
 }
