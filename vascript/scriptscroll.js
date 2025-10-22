@@ -15,6 +15,9 @@ let currentX = 0;            // current translateX offset (px)
 let startX = 0;              // initial start X (container width)
 let marqueeWidth = 0;
 
+const scriptWindow = document.getElementById('scriptWindow');
+const resetBtn = document.getElementById('mobileReset');
+
 fetch('scripts.json')
 .then(r => r.json())
 .then(data => {
@@ -221,5 +224,16 @@ window.addEventListener('focus', () => {
 
 window.addEventListener("resize", () => {
   if (!running) setupMarquee();
+});
+
+scriptWindow.addEventListener('click', () => {
+    startPauseScroll();
+});
+
+resetBtn.addEventListener('click', () => {
+    stopScrolling();              // stop animation
+    setupMarqueePosition();       // reposition to right
+    running = false;              // ensure it's stopped
+    console.log('Script reset. Ready to scroll again.');
 });
 
