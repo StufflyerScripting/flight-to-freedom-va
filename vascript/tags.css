@@ -97,6 +97,12 @@ body {
 
 .whisper {
     font-size: 0.95em;
+    opacity: 1;
+    font-style: normal;
+}
+
+.whisper {
+    font-size: 0.95em;
     opacity: 0.7;
     font-style: italic;
 }
