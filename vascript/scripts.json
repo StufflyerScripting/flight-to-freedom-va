@@ -1,22 +1,98 @@
 {
   "peter": {
     "en": {
-      "greetings": "Hello [pause] [breath] nice to see you [excitedly]!",
-      "interjections": "Oh no [pause] [breath] that's [whispering] unfortunate!"
+      "greetings": "[excitedly] Hello! [pause] [breath] Nice to see you [normal]!",
+      "interjections": "[angrily] Ugh! [pause_short] [softly] Oh no... [excitedly] Wow!",
+      "basic_sentences": "[normal] I need to get this done. [pause] [whispering] It's harder than I thought."
     },
     "de": {
-      "greetings": "Hallo [pause] [breath] schön dich zu sehen [excitedly]!",
-      "interjections": "Oh nein [pause] [breath] das ist [whispering] unglücklich!"
+      "greetings": "[excitedly] Hallo! [pause] [breath] Schön dich zu sehen [normal]!",
+      "interjections": "[angrily] Ach! [pause_short] [softly] Oh nein... [excitedly] Wow!",
+      "basic_sentences": "[normal] Ich muss das erledigen. [pause] [whispering] Es ist schwerer als gedacht."
     }
   },
   "günter": {
     "en": {
-      "greetings": "Hi there [pause] [breath] welcome!",
-      "interjections": "Wow [pause_long] unbelievable!"
+      "greetings": "[normal] Hi there! [pause] [breath] Welcome!",
+      "interjections": "[excitedly] Whoa! [pause_short] [angrily] No way! [softly] Hmm...",
+      "basic_sentences": "[normal] Let's try this again. [pause] [whispering] I hope it works."
     },
     "de": {
-      "greetings": "Hi [pause] [breath] willkommen!",
-      "interjections": "Wow [pause_long] unglaublich!"
+      "greetings": "[normal] Hi! [pause] [breath] Willkommen!",
+      "interjections": "[excitedly] Wow! [pause_short] [angrily] Auf keinen Fall! [softly] Hm...",
+      "basic_sentences": "[normal] Lass es uns nochmal versuchen. [pause] [whispering] Ich hoffe, es klappt."
+    }
+  },
+  "doris": {
+    "en": {
+      "greetings": "[excitedly] Hey! [pause] [breath] Good to see you!",
+      "interjections": "[softly] Oh dear... [pause] [angrily] What?! [excitedly] Yay!",
+      "basic_sentences": "[normal] I need some rest. [pause] [whispering] It's been a long day."
+    },
+    "de": {
+      "greetings": "[excitedly] Hey! [pause] [breath] Schön dich zu sehen!",
+      "interjections": "[softly] Oh je... [pause] [angrily] Was?! [excitedly] Hurra!",
+      "basic_sentences": "[normal] Ich brauche etwas Ruhe. [pause] [whispering] Es war ein langer Tag."
+    }
+  },
+  "frank": {
+    "en": {
+      "greetings": "[normal] Hey there! [pause] [breath] How's it going?",
+      "interjections": "[excitedly] Amazing! [pause_short] [angrily] Darn it! [softly] Uh-oh...",
+      "basic_sentences": "[normal] I have to finish this. [pause] [whispering] It's tricky."
+    },
+    "de": {
+      "greetings": "[normal] Hey! [pause] [breath] Wie geht's?",
+      "interjections": "[excitedly] Fantastisch! [pause_short] [angrily] Mist! [softly] Oh oh...",
+      "basic_sentences": "[normal] Ich muss das fertigstellen. [pause] [whispering] Es ist knifflig."
+    }
+  },
+  "andreas": {
+    "en": {
+      "greetings": "[excitedly] Hello! [pause] [breath] Welcome back!",
+      "interjections": "[angrily] No! [pause] [softly] Hmm... [excitedly] Yay!",
+      "basic_sentences": "[normal] I will handle this. [pause] [whispering] Let's be careful."
+    },
+    "de": {
+      "greetings": "[excitedly] Hallo! [pause] [breath] Willkommen zurück!",
+      "interjections": "[angrily] Nein! [pause] [softly] Hm... [excitedly] Hurra!",
+      "basic_sentences": "[normal] Ich werde das erledigen. [pause] [whispering] Seien wir vorsichtig."
+    }
+  },
+  "petra": {
+    "en": {
+      "greetings": "[excitedly] Hi! [pause] [breath] Nice day, isn't it?",
+      "interjections": "[softly] Oh my... [pause] [angrily] What?! [excitedly] Woohoo!",
+      "basic_sentences": "[normal] Let's start now. [pause] [whispering] I hope it's safe."
+    },
+    "de": {
+      "greetings": "[excitedly] Hi! [pause] [breath] Schöner Tag, nicht wahr?",
+      "interjections": "[softly] Oh je... [pause] [angrily] Was?! [excitedly] Juhu!",
+      "basic_sentences": "[normal] Lass uns jetzt anfangen. [pause] [whispering] Ich hoffe, es ist sicher."
+    }
+  },
+  "peter Jr.": {
+    "en": {
+      "greetings": "[excitedly] Hey! [pause] [breath] Good morning!",
+      "interjections": "[softly] Uh-oh... [pause] [excitedly] Yay! [angrily] Nooo!",
+      "basic_sentences": "[normal] I want to play. [pause] [whispering] Don't tell anyone."
+    },
+    "de": {
+      "greetings": "[excitedly] Hey! [pause] [breath] Guten Morgen!",
+      "interjections": "[softly] Oh oh... [pause] [excitedly] Juhu! [angrily] Nein!",
+      "basic_sentences": "[normal] Ich will spielen. [pause] [whispering] Sag es niemandem."
+    }
+  },
+  "andreas Jr.": {
+    "en": {
+      "greetings": "[excitedly] Hi! [pause] [breath] Good to see you!",
+      "interjections": "[softly] Hmm... [pause] [excitedly] Wow! [angrily] Oh no!",
+      "basic_sentences": "[normal] I want to learn. [pause] [whispering] Be careful."
+    },
+    "de": {
+      "greetings": "[excitedly] Hi! [pause] [breath] Schön dich zu sehen!",
+      "interjections": "[softly] Hm... [pause] [excitedly] Wow! [angrily] Oh nein!",
+      "basic_sentences": "[normal] Ich will lernen. [pause] [whispering] Sei vorsichtig."
     }
   }
 }
