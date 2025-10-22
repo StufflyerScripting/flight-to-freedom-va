@@ -1,0 +1,144 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding: 2rem;
+    background: linear-gradient(135deg, #e6f0ff, #c7d9ff);
+    min-height: 100vh;
+}
+
+.header {
+    font-size: 1.8rem;
+    margin: 0;
+}
+
+/* visible window */
+.script-window {
+    position: relative;
+    width: 90%;
+    max-width: 1100px;
+    height: 140px;
+    border-radius: 12px;
+    border: 3px solid #4461ff;
+    background: white;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+}
+
+/* the moving text */
+.marquee {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%) translateX(0);
+    white-space: nowrap;
+    font-size: 1.75rem;
+    /* Increased from 1.25rem */
+    line-height: 1.4;
+    will-change: transform;
+}
+
+/* cue bar */
+.cue-bar {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 2px;
+    background: rgba(68, 97, 255, 0.7);
+    transform: translateX(-50%);
+    z-index: 10;
+}
+
+/* tag styles */
+.tag {
+    color: #777;
+    font-style: italic;
+    margin: 0 6px;
+}
+
+.pause {
+    display: inline-block;
+    width: 120px;
+    height: 1px;
+}
+
+.pause_long {
+    display: inline-block;
+    width: 260px;
+    height: 1px;
+}
+
+.pause_short {
+    display: inline-block;
+    width: 70px;
+    height: 1px;
+}
+
+.breath {
+    color: #666;
+    font-style: italic;
+    margin: 0 6px;
+}
+
+.laugh {
+    color: #666;
+    font-style: italic;
+    margin: 0 6px;
+}
+
+.giggles {
+    color: #666;
+    font-style: italic;
+    margin: 0 6px;
+}
+
+.whisper {
+    font-size: 0.95em;
+    opacity: 0.7;
+    font-style: italic;
+}
+
+.excited {
+    color: #ff9b00;
+}
+
+.angry {
+    color: #e33;
+    letter-spacing: 1px;
+}
+
+.sad {
+    color: #66a;
+    opacity: 0.7;
+}
+
+.soft {
+    font-style: italic;
+    opacity: 0.85;
+}
+
+.scary {
+    color: rgb(110, 8, 8);
+    opacity: 1;
+    letter-spacing: 4px;
+}
+
+.menacing {
+    color: rgb(216, 39, 223);
+    opacity: 1;
+    letter-spacing: 4px;
+}
+
+
+
+.controls {
+    width: 90%;
+    max-width: 1100px;
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    font-size: 0.9rem;
+}

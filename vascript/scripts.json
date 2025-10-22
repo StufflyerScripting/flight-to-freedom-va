@@ -1,0 +1,14 @@
+{
+    "hero": {
+        "en": "Oh no [pause] [breath] well I guess that’s [whispering] how it is [excitedly] but we did it!",
+        "de": "Oh nein [pause] [breath] Ich schätze, das ist [whispering] wie es ist"
+    },
+    "villain": {
+        "en": "[breath] Finally... [pause_long] you’ve arrived.",
+        "de": "[breath] Endlich... [pause_long] du bist angekommen."
+    },
+    "guide": {
+        "en": "Welcome [pause_short] traveler. [whispering] Be careful... [angrily] Something is watching you",
+        "de": "Willkommen [pause_short] Reisender. [whispering] Sei vorsichtig..."
+    }
+}

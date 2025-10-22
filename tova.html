@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Voice Acting - Selection</title>
+</head>
+<body>
+    <h1>Select Character & Language</h1>
+
+    <label for="character">Character:</label>
+    <select id="character">
+        <option value="hero">Hero</option>
+        <option value="villain">Villain</option>
+        <option value="guide">Guide</option>
+    </select>
+
+    <br><br>
+
+    <label for="language">Language:</label>
+    <select id="language">
+        <option value="en">English</option>
+        <option value="de">German</option>
+    </select>
+
+    <br><br>
+
+    <button id="goBtn">Go</button>
+    <p id="output"></p>
+
+    <script>
+        document.getElementById('goBtn').addEventListener('click', () => {
+            const character = document.getElementById('character').value;
+            const language = document.getElementById('language').value;
+            const output = document.getElementById('output');
+
+            output.textContent = `Loading script for ${character} (${language})...`;
+
+            // redirect with query params
+            // optional: also pass scroll speed (n,t)
+            window.location.href = `vascript/script.html?character=${character}&lang=${language}&n=3&t=20`;
+        });
+    </script>
+</body>
+</html>

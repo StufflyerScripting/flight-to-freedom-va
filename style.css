@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap');
+
+body {
+    font-family: "Lexend", sans-serif;
+    background: linear-gradient(135deg, #e6f0ff, #c7d9ff);
+    color: #222;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Header */
+.header {
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+/* Buttons container */
+.buttons {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+/* Buttons styling */
+button {
+    font-family: "Lexend", sans-serif;
+    background-color: #4461ff;
+    color: white;
+    border: none;
+    padding: 0.8rem 2rem;
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.2s, transform 0.15s;
+}
+
+button:hover {
+    background-color: #2e49e8;
+    transform: scale(1.05);
+}
+
+button:active {
+    transform: scale(0.95);
+}
+
+/* Info paragraph */
+.info {
+    max-width: 600px;
+    text-align: center;
+    line-height: 1.5;
+    font-size: 1.05rem;
+}
+
+/* For the VA selection page */
+label, select {
+    font-family: "Lexend", sans-serif;
+    font-size: 1rem;
+}
+
+select {
+    padding: 0.4rem 0.6rem;
+    border-radius: 8px;
+    border: 1px solid #aaa;
+    margin-left: 0.4rem;
+}
+
+#output {
+    margin-top: 1.5rem;
+    font-size: 1.1rem;
+    font-weight: 500;
+}

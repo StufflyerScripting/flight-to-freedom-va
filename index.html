@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Flight to Freedom - Voice Acting</title>
+</head>
+<body>
+    <h1 class="header">Flight to Freedom Voice Actors</h1>
+    
+    <div class="buttons">
+        <button id="infoBtn">INFO</button>
+        <button id="toVABtn">TO VA</button>
+    </div>
+    
+    <p class="info"></p>
+
+    <script>
+        const infoParagraph = document.querySelector('.info');
+        const infoBtn = document.getElementById('infoBtn');
+        const toVABtn = document.getElementById('toVABtn');
+
+        infoBtn.addEventListener('click', () => {
+            infoParagraph.textContent = 
+                "Welcome to the Flight to Freedom Voice Acting Hub! " +
+                "Click 'TO VA' to select your character and start recording.";
+        });
+
+        toVABtn.addEventListener('click', () => {
+            window.location.href = "tova.html"; // redirect to another page
+        });
+    </script>
+</body>
+</html>
