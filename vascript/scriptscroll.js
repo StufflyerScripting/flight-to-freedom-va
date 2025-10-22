@@ -227,7 +227,11 @@ window.addEventListener("resize", () => {
 });
 
 scriptWindow.addEventListener('click', () => {
-    startPauseScroll();
+    if (!marqueeWidth || marqueeWidth === 0) {
+        setupMarqueePosition();
+    }
+    if (running) stopScrolling();
+    else startScrolling();
 });
 
 resetBtn.addEventListener('click', () => {
